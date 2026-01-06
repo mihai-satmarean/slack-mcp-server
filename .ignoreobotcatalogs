@@ -1,0 +1,8 @@
+npm/*
+build/*
+docs/*
+.github/*
+docker-compose.yml
+docker-compose.dev.yml
+docker-compose.toolkit.yml
+
