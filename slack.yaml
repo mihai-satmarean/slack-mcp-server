@@ -92,14 +92,6 @@ containerizedConfig:
   image: 'ghcr.io/mihai-satmarean/slack-mcp-server:latest'
   port: 3001
   path: '/mcp'
-  env:
-    SLACK_MCP_XOXC_TOKEN: "${SLACK_MCP_XOXC_TOKEN}"
-    SLACK_MCP_XOXD_TOKEN: "${SLACK_MCP_XOXD_TOKEN}"
-    SLACK_MCP_PORT: "3001"
-    SLACK_MCP_HOST: "0.0.0.0"
-    SLACK_MCP_USERS_CACHE: "/app/cache/users_cache.json"
-    SLACK_MCP_CHANNELS_CACHE: "/app/cache/channels_cache_v2.json"
-    SLACK_MCP_LOG_LEVEL: "${SLACK_MCP_LOG_LEVEL:-info}"
 
 tools:
   - name: conversations_history
