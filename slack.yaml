@@ -392,5 +392,5 @@ notes: |
   - Enable SLACK_MCP_CUSTOM_TLS if needed
   - Configure SLACK_MCP_PROXY for corporate proxies
 
-version: "1.0.0"
+version: "0.0.2"
 
