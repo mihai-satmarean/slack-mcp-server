@@ -31,11 +31,11 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21'
+          go-version-file: 'go.mod'
           cache: true
 
       - name: Build Go binary (verification)
-        run: make build
+        run: go build -o /tmp/slack-mcp-server ./cmd/slack-mcp-server
 
       - name: Log in to Container Registry
         if: github.event_name != 'pull_request'
@@ -66,6 +66,7 @@ jobs:
         with:
           context: .
           file: Dockerfile
+          target: production
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
