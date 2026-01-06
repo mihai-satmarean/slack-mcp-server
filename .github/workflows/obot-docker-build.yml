@@ -5,26 +5,12 @@ on:
     branches:
       - main
       - master
-    paths:
-      - 'cmd/**'
-      - 'pkg/**'
-      - '.github/workflows/docker-build.yml'
-      - 'Dockerfile'
-      - 'go.mod'
-      - 'go.sum'
     tags:
       - 'v*'
   pull_request:
     branches:
       - main
       - master
-    paths:
-      - 'cmd/**'
-      - 'pkg/**'
-      - '.github/workflows/docker-build.yml'
-      - 'Dockerfile'
-      - 'go.mod'
-      - 'go.sum'
   workflow_dispatch:
 
 env:
