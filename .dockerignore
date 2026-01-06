@@ -1,0 +1,56 @@
+# Build artifacts
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories
+vendor/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# CI/CD
+.github/workflows/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Documentation
+*.md
+!README.md
+docs/
+images/
+
+# Development
+.env
+.env.*
+!.env.dist
+docker-compose*.yml
+Makefile
+
+# Build tools
+build/
+scripts/
+
+# NPM (used for distribution)
+npm/
+node_modules/
+package*.json
+
+# Cache
+*_cache.json
+

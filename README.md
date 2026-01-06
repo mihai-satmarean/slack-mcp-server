@@ -162,6 +162,30 @@ npx @modelcontextprotocol/inspector go run mcp/mcp-server.go --transport stdio
 tail -n 20 -f ~/Library/Logs/Claude/mcp*.log
 ```
 
+## obot.ai Integration
+
+Add to your obot.ai MCP catalog using containerized runtime:
+
+```yaml
+name: Slack MCP Server
+runtime: containerized
+containerizedConfig:
+  image: 'ghcr.io/mihai-satmarean/slack-mcp-server:latest'
+  port: 3001
+  path: '/mcp'
+  env:
+    SLACK_MCP_XOXC_TOKEN: "${SLACK_MCP_XOXC_TOKEN}"
+    SLACK_MCP_XOXD_TOKEN: "${SLACK_MCP_XOXD_TOKEN}"
+    SLACK_MCP_PORT: "3001"
+    SLACK_MCP_HOST: "0.0.0.0"
+    SLACK_MCP_USERS_CACHE: "/app/cache/users_cache.json"
+    SLACK_MCP_CHANNELS_CACHE: "/app/cache/channels_cache_v2.json"
+```
+
+For complete obot.ai YAML definition with all tools and metadata, see: [slack.yaml](https://github.com/mihai-satmarean/slack-mcp-server/blob/master/slack.yaml)
+
+**Note:** This containerized setup uses the SSE transport and is optimized for obot.ai integration. For stealth mode authentication (xoxc/xoxd tokens), see the [Environment Variables](#environment-variables) section.
+
 ## Security
 
 - Never share API tokens
